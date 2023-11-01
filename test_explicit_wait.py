@@ -24,7 +24,6 @@ def wait(driver):
 def test_visible_after_with_explicit_waits(driver, wait):
     driver.get('https://victoretc.github.io/selenium_waits/')
     tittle_h1 = driver.find_element(By.TAG_NAME, "h1")
-    print(f'tittle_h1{tittle_h1}')
     assert tittle_h1.text == 'Практика с ожиданиями в Selenium'
     start_testing_button = wait.until(EC.element_to_be_clickable((By.CSS_SELECTOR, "button[id='startTest']")))
     assert start_testing_button.text == 'Начать тестирование'
