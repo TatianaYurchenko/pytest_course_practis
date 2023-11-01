@@ -10,7 +10,12 @@ def login(driver):
     driver.get("https://www.saucedemo.com/")
     time.sleep(2)
     username_field = driver.find_element(By.XPATH, '//input[@data-test="username"]')
+    # очистим поле
+    username_field.clear()
+    # передадим значение
     username_field.send_keys("standard_user")
+    # проверить что ввелся правильный текст
+    print(username_field.get_attribute("value"))
     password_field = driver.find_element(By.XPATH, '//input[@data-test="password"]')
     password_field.send_keys("secret_sauce")
 
